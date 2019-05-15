@@ -2,7 +2,7 @@
 
 class Article {
   constructor(domElement) {
-    console.log(domElement);
+    // console.log(domElement);
     // assign this.domElement to the passed in domElement
     this.domElement = domElement
 
@@ -16,17 +16,19 @@ class Article {
     // this.expandButton.addEventListener('click', () => this.expandArticle());
     // this.expandButton.addEventListener('click', this.expandArticle.bind(this));
     this.expandButton.addEventListener('click', this.expandArticle);
+    
   }
 
   expandArticle = () => {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    console.log(this.expandButton)
+    // console.log(this.expandButton)
     this.expandButton.classList.toggle('close');
     this.expandButton.classList.toggle('expandButton');
     this.expandButton.textContent == 'Expand' ? this.expandButton.textContent = 'Hide' : this.expandButton.textContent = 'Expand'; 
     this.domElement.classList.toggle('article-open');
   }
 }
+
 //
 /* START HERE: 
 
@@ -38,3 +40,5 @@ class Article {
 
 let articles = document.querySelectorAll('.article');
 articles.forEach(article => new Article(article));
+
+
